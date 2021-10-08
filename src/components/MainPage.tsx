@@ -54,7 +54,7 @@ const MainPage: React.VFC = () => {
                         <PolicySearchBody />
                     </Route>
                     <Route path="/auth">
-                        <AuthBody />
+                        <AuthBody winWidth={winWidth} />
                     </Route>
                     <Route>
                         <FOFBody />

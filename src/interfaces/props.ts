@@ -73,3 +73,9 @@ export interface ServiceCardProps {
     imgsrc?: string;
     alt?: string;
 }
+
+// body
+
+export interface AuthBodyProps {
+    winWidth: number;
+}

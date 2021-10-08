@@ -35,7 +35,14 @@ const MobAppBar: React.VFC<MobAppBarProps> = (props) => {
             <HideOnScroll>
                 <AppBar>
                     <Toolbar sx={{ p: 1 }}>
-                        <Box sx={{ display: "flex", width: "100%" }}>
+                        <Box
+                            sx={{
+                                display: "flex",
+                                width: "100%",
+                                alignItems: "center",
+                                justifyContent: "space-evenly",
+                            }}
+                        >
                             <IconButton
                                 sx={{ flex: "1" }}
                                 size="large"
@@ -44,7 +51,7 @@ const MobAppBar: React.VFC<MobAppBarProps> = (props) => {
                             >
                                 <Badge badgeContent={2} color="error">
                                     <NotificationsActiveIcon
-                                        sx={{ fontSize: "20vw" }}
+                                        sx={{ fontSize: 72 }}
                                     />
                                 </Badge>
                             </IconButton>
@@ -55,29 +62,23 @@ const MobAppBar: React.VFC<MobAppBarProps> = (props) => {
                                 color="inherit"
                             >
                                 <Badge badgeContent={4} color="error">
-                                    <AnnouncementIcon
-                                        sx={{ fontSize: "20vw" }}
-                                    />
+                                    <AnnouncementIcon sx={{ fontSize: 72 }} />
                                 </Badge>
                             </IconButton>
-                            <Link to="/orgsrh">
-                                <IconButton
-                                    sx={{ flex: "1" }}
-                                    size="large"
-                                    aria-label="기관조회"
-                                    color={
-                                        value === 1 ? "secondary" : "inherit"
-                                    }
-                                    onClick={(e) => handleChange(e, 1)}
-                                >
-                                    <SearchIcon sx={{ fontSize: "20vw" }} />
-                                </IconButton>
-                            </Link>
+                            <IconButton
+                                sx={{ flex: "1" }}
+                                size="large"
+                                aria-label="기관조회"
+                                color={value === 1 ? "secondary" : "inherit"}
+                                onClick={(e) => handleChange(e, 1)}
+                            >
+                                <SearchIcon sx={{ fontSize: 72 }} />
+                            </IconButton>
                         </Box>
                     </Toolbar>
                 </AppBar>
             </HideOnScroll>
-            <Toolbar sx={{ mb: "20vw" }} />
+            <Toolbar sx={{ mb: 10 }} />
         </>
     );
 };
