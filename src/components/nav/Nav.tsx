@@ -10,7 +10,6 @@ import SearchIcon from "@mui/icons-material/Search";
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 import AddCircleOutlineIcon from "@mui/icons-material/AddCircleOutline";
 import PolicyIcon from "@mui/icons-material/Policy";
-import Paper from "@mui/material/Paper";
 import Button from "@mui/material/Button";
 
 const Nav: React.VFC<NavProps> = (props) => {
@@ -30,9 +29,12 @@ const Nav: React.VFC<NavProps> = (props) => {
                         textColor="inherit"
                         variant="fullWidth"
                         sx={{ flex: 3 }}
-                        TabIndicatorProps={{ style: { display: "none" } }}
+                        TabIndicatorProps={{
+                            style: { display: value === 0 ? "none" : "" },
+                        }}
                     >
                         <Tab sx={{ position: "absolute" }} />
+
                         <Tab
                             label="기관검색"
                             icon={<SearchIcon sx={{ fontSize: 90, p: 1 }} />}
@@ -56,22 +58,29 @@ const Nav: React.VFC<NavProps> = (props) => {
                             icon={<PolicyIcon sx={{ fontSize: 90, p: 1 }} />}
                         />
                     </Tabs>
-                    <Paper sx={{ flex: "1", mr: 2 }}>
+                    <Box
+                        sx={{
+                            flex: "1",
+                            display: "flex",
+                            alignItems: "center",
+                            justifyContent: "center",
+                        }}
+                    >
                         <Button
-                            sx={{ width: "100%", p: 2 }}
+                            sx={{ p: 2 }}
                             onClick={(e) => handleChange(e, 0)}
                         >
                             <Typography
-                                variant="h3"
-                                sx={{ textAlign: "center" }}
+                                variant="h4"
+                                sx={{ width: "100%", textAlign: "center" }}
                             >
                                 ablemall
                             </Typography>
                         </Button>
-                    </Paper>
+                    </Box>
                 </Toolbar>
             </AppBar>
-            <Toolbar sx={{ pb: 20 }} />
+            <Toolbar sx={{ pb: 17 }} />
         </>
     );
 };

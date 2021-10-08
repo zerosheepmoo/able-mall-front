@@ -1,7 +1,6 @@
 import * as React from "react";
 import AppBar from "@mui/material/AppBar";
 import Toolbar from "@mui/material/Toolbar";
-import Typography from "@mui/material/Typography";
 import IconButton from "@mui/material/IconButton";
 import Box from "@mui/material/Box";
 import Badge from "@mui/material/Badge";
@@ -11,16 +10,15 @@ import AnnouncementIcon from "@mui/icons-material/Announcement";
 import NotificationsActiveIcon from "@mui/icons-material/NotificationsActive";
 import SearchIcon from "@mui/icons-material/Search";
 import { MobAppBarProps } from "../../interfaces/props";
+import { Link } from "react-router-dom";
 
 interface Props {
     children: React.ReactElement;
 }
 
+//  hide on scrol
 const HideOnScroll = (props: Props) => {
     const { children } = props;
-    // Note that you normally won't need to set the window ref as useScrollTrigger
-    // will default to window.
-    // This is only being set here because the demo is in an iframe.
     const trigger = useScrollTrigger();
 
     return (
@@ -31,7 +29,7 @@ const HideOnScroll = (props: Props) => {
 };
 
 const MobAppBar: React.VFC<MobAppBarProps> = (props) => {
-    const { value, handleChange } = props;
+    const { value, handleChange, locas } = props;
     return (
         <>
             <HideOnScroll>
@@ -66,15 +64,19 @@ const MobAppBar: React.VFC<MobAppBarProps> = (props) => {
                                     />
                                 </Badge>
                             </IconButton>
-                            <IconButton
-                                sx={{ flex: "1" }}
-                                size="large"
-                                aria-label="기관조회"
-                                color={value === 1 ? "secondary" : "inherit"}
-                                onClick={(e) => handleChange(e, 1)}
-                            >
-                                <SearchIcon sx={{ fontSize: "20vw" }} />
-                            </IconButton>
+                            <Link to="/orgsrh">
+                                <IconButton
+                                    sx={{ flex: "1" }}
+                                    size="large"
+                                    aria-label="기관조회"
+                                    color={
+                                        value === 1 ? "secondary" : "inherit"
+                                    }
+                                    onClick={(e) => handleChange(e, 1)}
+                                >
+                                    <SearchIcon sx={{ fontSize: "20vw" }} />
+                                </IconButton>
+                            </Link>
                         </Box>
                     </Toolbar>
                 </AppBar>
