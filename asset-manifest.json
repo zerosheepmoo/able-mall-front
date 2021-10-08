@@ -1,20 +1,20 @@
 {
   "files": {
     "main.css": "/able-mall-front/static/css/main.79b4048d.chunk.css",
-    "main.js": "/able-mall-front/static/js/main.e751f78f.chunk.js",
-    "main.js.map": "/able-mall-front/static/js/main.e751f78f.chunk.js.map",
+    "main.js": "/able-mall-front/static/js/main.7d63b514.chunk.js",
+    "main.js.map": "/able-mall-front/static/js/main.7d63b514.chunk.js.map",
     "runtime-main.js": "/able-mall-front/static/js/runtime-main.4e2a55a3.js",
     "runtime-main.js.map": "/able-mall-front/static/js/runtime-main.4e2a55a3.js.map",
-    "static/js/2.f3768784.chunk.js": "/able-mall-front/static/js/2.f3768784.chunk.js",
-    "static/js/2.f3768784.chunk.js.map": "/able-mall-front/static/js/2.f3768784.chunk.js.map",
+    "static/js/2.b61e86f3.chunk.js": "/able-mall-front/static/js/2.b61e86f3.chunk.js",
+    "static/js/2.b61e86f3.chunk.js.map": "/able-mall-front/static/js/2.b61e86f3.chunk.js.map",
     "index.html": "/able-mall-front/index.html",
     "static/css/main.79b4048d.chunk.css.map": "/able-mall-front/static/css/main.79b4048d.chunk.css.map",
-    "static/js/2.f3768784.chunk.js.LICENSE.txt": "/able-mall-front/static/js/2.f3768784.chunk.js.LICENSE.txt"
+    "static/js/2.b61e86f3.chunk.js.LICENSE.txt": "/able-mall-front/static/js/2.b61e86f3.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.4e2a55a3.js",
-    "static/js/2.f3768784.chunk.js",
+    "static/js/2.b61e86f3.chunk.js",
     "static/css/main.79b4048d.chunk.css",
-    "static/js/main.e751f78f.chunk.js"
+    "static/js/main.7d63b514.chunk.js"
   ]
 }
