@@ -17,6 +17,7 @@ const BottomNav: React.VFC<BottomNavProps> = (props) => {
                 bottom: 0,
                 backgroundColor: "primary.main",
                 height: 70,
+                zIndex: 10,
             }}
             value={value}
             onChange={handleChange}

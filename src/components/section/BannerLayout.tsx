@@ -6,19 +6,20 @@ import { BannerLayoutProps } from "../../interfaces/props";
 const BannerLayout: React.VFC<BannerLayoutProps> = (props) => {
     const { imgsrc, alt, bText } = props;
     return (
-        <div>
-            <Paper
-                elevation={2}
-                sx={{
-                    m: 2,
-                    height: 130,
-                    textAlign: "center",
-                    backgroundImage: `url(${imgsrc}`,
-                }}
-            >
-                <Typography color="secondary">{bText}</Typography>
-            </Paper>
-        </div>
+        <Paper
+            elevation={2}
+            sx={{
+                mt: 2,
+                ml: 2,
+                mr: 2,
+                height: 130,
+                textAlign: "center",
+                backgroundColor: "#44aaff",
+            }}
+        >
+            <Typography color="secondary">{bText}</Typography>
+            <Typography color="secondary">{alt}</Typography>
+        </Paper>
     );
 };
 

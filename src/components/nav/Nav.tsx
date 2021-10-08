@@ -71,7 +71,7 @@ const Nav: React.VFC<NavProps> = (props) => {
                             onClick={(e) => handleChange(e, 0)}
                         >
                             <Typography
-                                variant="h4"
+                                variant="h3"
                                 sx={{ width: "100%", textAlign: "center" }}
                             >
                                 ablemall
@@ -80,7 +80,7 @@ const Nav: React.VFC<NavProps> = (props) => {
                     </Box>
                 </Toolbar>
             </AppBar>
-            <Toolbar sx={{ pb: 17 }} />
+            <Toolbar sx={{ pb: 19 }} />
         </>
     );
 };

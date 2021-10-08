@@ -29,16 +29,12 @@ const HideOnScroll = (props: Props) => {
 };
 
 const MobAppBar: React.VFC<MobAppBarProps> = (props) => {
-    const { value, handleChange, locas } = props;
+    const { value, handleChange } = props;
     return (
         <>
             <HideOnScroll>
                 <AppBar>
                     <Toolbar sx={{ p: 1 }}>
-                        {/* <Typography variant="h4" component="div">
-                            AbleMall
-                        </Typography>
-                        <Box sx={{ flexGrow: 1 }} /> */}
                         <Box sx={{ display: "flex", width: "100%" }}>
                             <IconButton
                                 sx={{ flex: "1" }}

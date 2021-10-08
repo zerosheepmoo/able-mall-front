@@ -5,26 +5,22 @@ import React from "react";
 export interface BottomNavProps {
     value: number;
     handleChange: (event: React.SyntheticEvent, newValue: number) => void;
-    locas: string[];
 }
 
 export interface NavProps {
     value: number;
     handleChange: (event: React.SyntheticEvent, newValue: number) => void;
-    locas: string[];
 }
 
 export interface MobAppBarProps {
     value: number;
     handleChange: (event: React.SyntheticEvent, newValue: number) => void;
-    locas: string[];
 }
 
 export interface ComplexNavProps {
     value: number;
     handleChange: (event: React.SyntheticEvent, newValue: number) => void;
     winWidth: number;
-    locas: string[];
 }
 
 // Layouts
@@ -48,4 +44,32 @@ export interface BannerLayoutProps {
     imgsrc: string;
     alt?: string;
     bText?: string;
+}
+
+// section
+
+export interface SignInProps {
+    handleSignIn: (id?: string, pw?: string) => void;
+    email: {
+        value: string;
+        dispatch: React.Dispatch<React.SetStateAction<string>>;
+    };
+    pw: {
+        value: string;
+        dispatch: React.Dispatch<React.SetStateAction<string>>;
+    };
+}
+
+export interface SignedInProps {
+    signout: () => void;
+    nickname: string;
+    email: string;
+    points: number;
+}
+
+export interface ServiceCardProps {
+    title: string;
+    desc: string;
+    imgsrc?: string;
+    alt?: string;
 }

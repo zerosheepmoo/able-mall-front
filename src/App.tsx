@@ -7,7 +7,7 @@ import { HashRouter } from "react-router-dom";
 
 const App: React.VFC = () => {
     return (
-        <HashRouter basename="/able-mall-front/">
+        <HashRouter basename="/">
             <ThemeProvider theme={mainTheme}>
                 <div className="App">
                     <CssBaseline />
