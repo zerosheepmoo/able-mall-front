@@ -14,7 +14,7 @@ const MainPage: React.VFC = () => {
     const winWidth = useWindowWidthSize();
 
     useEffect(() => {
-        window.location.href = `${window.location.origin}#${loca[tabIdx]}`;
+        window.location.href = `${window.location.origin}${window.location.pathname}#${loca[tabIdx]}`;
     }, [tabIdx]);
 
     return (
