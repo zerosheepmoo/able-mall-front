@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/able-mall-front/static/css/main.79b4048d.chunk.css",
-    "main.js": "/able-mall-front/static/js/main.5e014d53.chunk.js",
-    "main.js.map": "/able-mall-front/static/js/main.5e014d53.chunk.js.map",
+    "main.js": "/able-mall-front/static/js/main.0d9940b6.chunk.js",
+    "main.js.map": "/able-mall-front/static/js/main.0d9940b6.chunk.js.map",
     "runtime-main.js": "/able-mall-front/static/js/runtime-main.4e2a55a3.js",
     "runtime-main.js.map": "/able-mall-front/static/js/runtime-main.4e2a55a3.js.map",
     "static/js/2.80499b7a.chunk.js": "/able-mall-front/static/js/2.80499b7a.chunk.js",
@@ -15,6 +15,6 @@
     "static/js/runtime-main.4e2a55a3.js",
     "static/js/2.80499b7a.chunk.js",
     "static/css/main.79b4048d.chunk.css",
-    "static/js/main.5e014d53.chunk.js"
+    "static/js/main.0d9940b6.chunk.js"
   ]
 }
