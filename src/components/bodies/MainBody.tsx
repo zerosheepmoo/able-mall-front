@@ -7,6 +7,7 @@ import CaraMain from "../section/CaraMain";
 import SignIn from "../section/SignIn";
 import SignedIn from "../section/SignedIn";
 import BannerLayout from "../section/BannerLayout";
+import { MainBodyProps } from "../../interfaces/props";
 
 const updatesContents = [
     { title: "새해 복 많이 받으세용!", date: "2022-01-02" },
@@ -30,10 +31,11 @@ const requetContents = [
     { title: "건의해요", date: "2021-10-09" },
 ];
 
-const MainBody: React.VFC = () => {
+const MainBody: React.VFC<MainBodyProps> = (props) => {
     const [loggedIn, setLoggedIn] = useState(false);
     const [email, setEmail] = useState("");
     const [pw, setPw] = useState("");
+    const { goSignUp } = props;
 
     const handleSignIn = (email?: string, pw?: string) => {
         if (!email) {
@@ -105,6 +107,7 @@ const MainBody: React.VFC = () => {
                             email={{ value: email, dispatch: setEmail }}
                             pw={{ value: pw, dispatch: setPw }}
                             handleSignIn={handleSignIn}
+                            goSignUp={goSignUp}
                         />
                     )}
 

@@ -58,6 +58,7 @@ export interface SignInProps {
         value: string;
         dispatch: React.Dispatch<React.SetStateAction<string>>;
     };
+    goSignUp: () => void;
 }
 
 export interface SignedInProps {
@@ -78,4 +79,8 @@ export interface ServiceCardProps {
 
 export interface AuthBodyProps {
     winWidth: number;
+}
+
+export interface MainBodyProps {
+    goSignUp: () => void;
 }

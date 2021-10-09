@@ -12,7 +12,7 @@ import Container from "@mui/material/Container";
 import { SignInProps } from "../../interfaces/props";
 
 const SignIn: React.VFC<SignInProps> = (props) => {
-    const { handleSignIn, email, pw } = props;
+    const { handleSignIn, email, pw, goSignUp } = props;
 
     const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
         event.preventDefault();
@@ -92,7 +92,7 @@ const SignIn: React.VFC<SignInProps> = (props) => {
                             </Link>
                         </Grid>
                         <Grid item>
-                            <Link href="/#/auth" variant="body2">
+                            <Link onClick={(e) => goSignUp()} variant="body2">
                                 {"처음이신가요?"}
                             </Link>
                         </Grid>

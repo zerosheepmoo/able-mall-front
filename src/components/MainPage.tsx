@@ -27,6 +27,10 @@ const MainPage: React.VFC = () => {
         history.push(`/${locas[idx]}`);
     };
 
+    const goSignUp = () => {
+        history.push(`/auth`);
+    };
+
     return (
         <>
             {/* navigation */}
@@ -39,7 +43,7 @@ const MainPage: React.VFC = () => {
             <Grid container spacing={2}>
                 <Switch>
                     <Route path="/" exact>
-                        <MainBody />
+                        <MainBody goSignUp={goSignUp} />
                     </Route>
                     <Route path="/orgsrh">
                         <OrganSearchBody />
