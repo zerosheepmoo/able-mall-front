@@ -10,10 +10,20 @@ import ProductBody from "./bodies/ProductBody";
 import PolicySearchBody from "./bodies/PolicySearchBody";
 import AuthBody from "./bodies/AuthBody";
 import FOFBody from "./bodies/FOFBody";
+import SignInBody from "./bodies/SignInBody";
 
-const locas = ["", "orgsrh", "addser", "shop", "polsrh"];
+const locas = ["", "orgsrh", "addser", "shop", "polsrh", "signin"];
+
+const exampleInfo = {
+    name: "김공자",
+    email: "able@ablemall.com",
+    points: 49000,
+    type: "뇌병변장애인",
+    level: "3급",
+};
 
 const MainPage: React.VFC = () => {
+    const [isSignedIn, setIsSignedIn] = useState(false);
     const [tabIdx, setTabIdx] = useState(0);
     const handleTabChange = (event: React.SyntheticEvent, newValue: number) => {
         setTabIdx(newValue);
@@ -31,6 +41,14 @@ const MainPage: React.VFC = () => {
         history.push(`/auth`);
     };
 
+    const goSignIn = () => {
+        history.push("/signin");
+    };
+
+    const goHome = (event: React.SyntheticEvent) => {
+        handleTabChange(event, 0);
+    };
+
     return (
         <>
             {/* navigation */}
@@ -38,12 +56,14 @@ const MainPage: React.VFC = () => {
                 winWidth={winWidth}
                 value={tabIdx}
                 handleChange={handleTabChange}
+                signedIn={isSignedIn}
+                goSignIn={goSignIn}
             />
             {/* mainbody */}
-            <Grid container spacing={2}>
+            <Grid container sx={{ mb: 10 }}>
                 <Switch>
                     <Route path="/" exact>
-                        <MainBody goSignUp={goSignUp} />
+                        <MainBody />
                     </Route>
                     <Route path="/orgsrh">
                         <OrganSearchBody />
@@ -52,13 +72,22 @@ const MainPage: React.VFC = () => {
                         <ServiceBody />
                     </Route>
                     <Route path="/shop">
-                        <ProductBody />
+                        <ProductBody info={exampleInfo} />
                     </Route>
                     <Route path="/polsrh">
                         <PolicySearchBody />
                     </Route>
                     <Route path="/auth">
                         <AuthBody winWidth={winWidth} />
+                    </Route>
+                    <Route>
+                        <SignInBody
+                            goSignUp={goSignUp}
+                            isSignedIn={isSignedIn}
+                            setIsSignedIn={setIsSignedIn}
+                            gohome={goHome}
+                            info={exampleInfo}
+                        />
                     </Route>
                     <Route>
                         <FOFBody />

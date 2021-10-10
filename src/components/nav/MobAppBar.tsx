@@ -11,6 +11,8 @@ import NotificationsActiveIcon from "@mui/icons-material/NotificationsActive";
 import SearchIcon from "@mui/icons-material/Search";
 import { MobAppBarProps } from "../../interfaces/props";
 import { Link } from "react-router-dom";
+import InfoIcon from "@mui/icons-material/Info";
+import VpnKeyIcon from "@mui/icons-material/VpnKey";
 
 interface Props {
     children: React.ReactElement;
@@ -29,7 +31,7 @@ const HideOnScroll = (props: Props) => {
 };
 
 const MobAppBar: React.VFC<MobAppBarProps> = (props) => {
-    const { value, handleChange } = props;
+    const { value, handleChange, signedIn, goSignIn } = props;
     return (
         <>
             <HideOnScroll>
@@ -46,25 +48,17 @@ const MobAppBar: React.VFC<MobAppBarProps> = (props) => {
                             <IconButton
                                 sx={{ flex: "1" }}
                                 size="large"
-                                aria-label="show 2 news"
-                                color="inherit"
-                            >
-                                <Badge badgeContent={2} color="error">
-                                    <NotificationsActiveIcon
-                                        sx={{ fontSize: 72 }}
-                                    />
-                                </Badge>
-                            </IconButton>
-                            <IconButton
-                                sx={{ flex: "1" }}
-                                size="large"
                                 aria-label="show 4 updates"
                                 color="inherit"
+                                onClick={() => goSignIn()}
                             >
-                                <Badge badgeContent={4} color="error">
-                                    <AnnouncementIcon sx={{ fontSize: 72 }} />
-                                </Badge>
+                                {signedIn ? (
+                                    <InfoIcon sx={{ fontSize: 80, p: 1 }} />
+                                ) : (
+                                    <VpnKeyIcon sx={{ fontSize: 80, p: 1 }} />
+                                )}
                             </IconButton>
+
                             <IconButton
                                 sx={{ flex: "1" }}
                                 size="large"

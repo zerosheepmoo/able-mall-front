@@ -1,163 +1,118 @@
 import React, { useState } from "react";
-import ImageListItem from "@mui/material/ImageListItem";
-import ImageListItemBar from "@mui/material/ImageListItemBar";
 import Box from "@mui/material/Box";
 import Grid from "@mui/material/Grid";
 import Tabs from "@mui/material/Tabs";
 import Tab from "@mui/material/Tab";
-import Rating from "@mui/material/Rating";
-import Typography from "@mui/material/Typography";
-import IconButton from "@mui/material/IconButton";
-import InfoIcon from "@mui/icons-material/Info";
+
+import ProductCard from "../section/ProductCard";
+import { ProductType } from "../../interfaces/consts";
+
+import Bunjojang from "../../images/bunjojang.png";
+import Dobble from "../../images/dobble.png";
+import LangTera from "../../images/langtera.png";
+import PerBattle from "../../images/personalitybattle.png";
+import Gosum from "../../images/gosumdot.png";
+import MagnetLang from "../../images/magnetlang.png";
+import MeCon from "../../images/meconbey.png";
+import MeMind from "../../images/memind.png";
+import Que from "../../images/questionmart.png";
+import Safe from "../../images/safe.png";
+import Making from "../../images/making.png";
+import Tape from "../../images/sujungtape.png";
+import ProductTool from "../section/ProductTool";
+import { ProductBodyProps } from "../../interfaces/props";
 
 const itemData = [
     {
-        img: "https://images.unsplash.com/photo-1551963831-b3b1ca40c98e",
-        title: "Breakfast",
-        author: "@bkristastucchio",
-        rows: 2,
-        cols: 2,
-        featured: true,
+        img: Bunjojang,
+        title: "분노조절게임",
+        category: ProductType.PUZ,
+        price: 39000,
     },
     {
-        img: "https://images.unsplash.com/photo-1551782450-a2132b4ba21d",
-        title: "Burger",
-        author: "@rollelflex_graphy726",
+        img: Dobble,
+        title: "도블동물원",
+        category: ProductType.PUZ,
+        price: 19800,
     },
     {
-        img: "https://images.unsplash.com/photo-1522770179533-24471fcdba45",
-        title: "Camera",
-        author: "@helloimnik",
+        img: LangTera,
+        title: "지적장애아동언어치료",
+        category: ProductType.LANG,
+        price: 19000,
     },
     {
-        img: "https://images.unsplash.com/photo-1444418776041-9c7e33cc5a9c",
-        title: "Coffee",
-        author: "@nolanissac",
-        cols: 2,
+        img: PerBattle,
+        title: "성격대결",
+        category: ProductType.CREATE,
+        price: 70000,
+        exPrice: 100000,
     },
     {
-        img: "https://images.unsplash.com/photo-1533827432537-70133748f5c8",
-        title: "Hats",
-        author: "@hjrc33",
-        cols: 2,
+        img: Gosum,
+        title: "촉감보드: 고슴도치닷",
+        category: ProductType.CREATE,
+        price: 39000,
+        exPrice: 79000,
     },
     {
-        img: "https://images.unsplash.com/photo-1558642452-9d2a7deb7f62",
-        title: "Honey",
-        author: "@arwinneil",
-        rows: 2,
-        cols: 2,
-        featured: true,
+        img: MagnetLang,
+        title: "자석 언어카드",
+        category: ProductType.LANG,
+        price: 41000,
     },
     {
-        img: "https://images.unsplash.com/photo-1516802273409-68526ee1bdd6",
-        title: "Basketball",
-        author: "@tjdragotta",
+        img: MeCon,
+        title: "내가 말하기 게임",
+        category: ProductType.LANG,
+        price: 70000,
     },
     {
-        img: "https://images.unsplash.com/photo-1518756131217-31eb79b20e8f",
-        title: "Fern",
-        author: "@katie_wasserman",
+        img: MeMind,
+        title: "내 마음이 들리니?",
+        category: ProductType.CREATE,
+        price: 51000,
     },
     {
-        img: "https://images.unsplash.com/photo-1597645587822-e99fa5d45d25",
-        title: "Mushrooms",
-        author: "@silverdalex",
-        rows: 2,
-        cols: 2,
+        img: Que,
+        title: "마트에간 궁금이",
+        category: ProductType.PHY,
+        price: 48000,
     },
     {
-        img: "https://images.unsplash.com/photo-1567306301408-9b74779a11af",
-        title: "Tomato basil",
-        author: "@shelleypauls",
+        img: Safe,
+        title: "안전빙고",
+        category: ProductType.PUZ,
+        price: 18000,
     },
     {
-        img: "https://images.unsplash.com/photo-1471357674240-e1a485acb3e1",
-        title: "Sea star",
-        author: "@peterlaster",
+        img: Making,
+        title: "요리를만들어요(10인용)",
+        category: ProductType.MAKE,
+        price: 22000,
     },
     {
-        img: "https://images.unsplash.com/photo-1589118949245-7d38baf380d6",
-        title: "Bike",
-        author: "@southside_customs",
-        cols: 2,
-    },
-    {
-        img: "https://images.unsplash.com/photo-1551963831-b3b1ca40c98e",
-        title: "Breakfast2",
-        author: "@bkristastucchio",
-        rows: 2,
-        cols: 2,
-        featured: true,
-    },
-    {
-        img: "https://images.unsplash.com/photo-1551782450-a2132b4ba21d",
-        title: "Burger2",
-        author: "@rollelflex_graphy726",
-    },
-    {
-        img: "https://images.unsplash.com/photo-1522770179533-24471fcdba45",
-        title: "Camera2",
-        author: "@helloimnik",
-    },
-    {
-        img: "https://images.unsplash.com/photo-1444418776041-9c7e33cc5a9c",
-        title: "Coffee2",
-        author: "@nolanissac",
-        cols: 2,
-    },
-    {
-        img: "https://images.unsplash.com/photo-1533827432537-70133748f5c8",
-        title: "Hats2",
-        author: "@hjrc33",
-        cols: 2,
-    },
-    {
-        img: "https://images.unsplash.com/photo-1558642452-9d2a7deb7f62",
-        title: "Honey2",
-        author: "@arwinneil",
-        rows: 2,
-        cols: 2,
-        featured: true,
-    },
-    {
-        img: "https://images.unsplash.com/photo-1516802273409-68526ee1bdd6",
-        title: "Basketball2",
-        author: "@tjdragotta",
-    },
-    {
-        img: "https://images.unsplash.com/photo-1518756131217-31eb79b20e8f",
-        title: "Fern2",
-        author: "@katie_wasserman",
-    },
-    {
-        img: "https://images.unsplash.com/photo-1597645587822-e99fa5d45d25",
-        title: "Mushrooms2",
-        author: "@silverdalex",
-        rows: 2,
-        cols: 2,
-    },
-    {
-        img: "https://images.unsplash.com/photo-1567306301408-9b74779a11af",
-        title: "Tomato basil2",
-        author: "@shelleypauls",
-    },
-    {
-        img: "https://images.unsplash.com/photo-1471357674240-e1a485acb3e1",
-        title: "Sea star2",
-        author: "@peterlaster",
-    },
-    {
-        img: "https://images.unsplash.com/photo-1589118949245-7d38baf380d6",
-        title: "Bike2",
-        author: "@southside_customs",
-        cols: 2,
+        img: Tape,
+        title: "수정테이프",
+        category: ProductType.CLASS,
+        price: 4500,
     },
 ];
 
-const ProductBody: React.VFC = () => {
+const tabsKind = [
+    ProductType.ALL,
+    ProductType.CREATE,
+    ProductType.LANG,
+    ProductType.MAKE,
+    ProductType.PUZ,
+    ProductType.PHY,
+    ProductType.CLASS,
+];
+
+const ProductBody: React.VFC<ProductBodyProps> = (props) => {
+    const { info } = props;
     const [categoryType, setCategoryType] = useState(0);
-    const [rating, setRating] = useState<number | null>(4);
+
     const handleCategory = (event: React.SyntheticEvent, newValue: number) => {
         setCategoryType(newValue);
     };
@@ -170,84 +125,43 @@ const ProductBody: React.VFC = () => {
                         borderColor: "divider",
                         width: "80%",
                         pt: 1,
+                        mt: 2,
+                        mb: 3,
                     }}
                 >
                     <Tabs
-                        variant="fullWidth"
-                        sx={{ width: "100%" }}
+                        variant="scrollable"
+                        scrollButtons="auto"
+                        sx={{
+                            width: "100%",
+                            display: "flex",
+                        }}
                         value={categoryType}
                         onChange={handleCategory}
                     >
-                        <Tab label="전체" />
-                        <Tab label="장난감" />
-                        <Tab label="일상" />
-                        <Tab label="옷" />
-                        <Tab label="공구" />
-                        <Tab label="전자기기" />
-                        <Tab label="기타" />
+                        {tabsKind.map((tn) => (
+                            <Tab
+                                sx={{ flex: 1, minWidth: 152 }}
+                                key={tn}
+                                label={tn}
+                            />
+                        ))}
                     </Tabs>
                 </Box>
             </Grid>
-            <Grid container item xs={12} justifyContent="space-around">
+            <Grid container item xs={12} justifyContent="center">
                 {itemData.map((item) => {
-                    if (item.cols && categoryType % 2 === 1) {
-                        return <></>;
-                    }
-                    if (
-                        item.rows &&
-                        (categoryType === 2 || categoryType === 4)
-                    ) {
-                        return <></>;
+                    if (categoryType === 0) {
+                        return <ProductCard item={item} />;
                     }
                     return (
-                        <ImageListItem
-                            key={item.title}
-                            sx={{ mt: 2, mb: 8, ml: 2, mr: 2 }}
-                        >
-                            <img
-                                src={`${item.img}?w=248&fit=crop&auto=format`}
-                                srcSet={`${item.img}?w=248&fit=crop&auto=format&dpr=2 2x`}
-                                alt={item.title}
-                                loading="lazy"
-                            />
-                            <ImageListItemBar
-                                title={item.title}
-                                subtitle={item.author}
-                                actionIcon={
-                                    <IconButton
-                                        sx={{
-                                            color: "rgba(255, 255, 255, 0.54)",
-                                        }}
-                                        aria-label={`info about ${item.title}`}
-                                    >
-                                        <InfoIcon />
-                                    </IconButton>
-                                }
-                            />
-                            <Box sx={{ display: "flex" }}>
-                                <Typography variant="h6" role="body1">
-                                    142,857 원
-                                </Typography>
-                                <Typography
-                                    variant="body2"
-                                    role="body1"
-                                    style={{ textDecoration: "line-through" }}
-                                >
-                                    142,857 원
-                                </Typography>
-                            </Box>
-                            <Rating
-                                value={rating}
-                                onChange={(event, newValue) => {
-                                    if (newValue) {
-                                        setRating(newValue);
-                                    }
-                                }}
-                            />
-                        </ImageListItem>
+                        item.category === tabsKind[categoryType] && (
+                            <ProductCard item={item} />
+                        )
                     );
                 })}
             </Grid>
+            <ProductTool info={info} />
         </>
     );
 };

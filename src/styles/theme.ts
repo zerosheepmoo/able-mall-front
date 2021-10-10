@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/ban-ts-comment */
 import { createTheme } from "@mui/material/styles";
 
 /**
@@ -43,5 +44,8 @@ export const mainTheme = createTheme({
                 },
             },
         },
+    },
+    typography: {
+        fontFamily: ["HSGaeulSenggak20", "serif"].join(", "),
     },
 });

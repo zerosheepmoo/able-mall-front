@@ -28,8 +28,28 @@ const BoardLayout: React.VFC<BoardLayoutProps> = (props) => {
                             justifyContent: "space-between",
                         }}
                     >
-                        <Typography variant="body1">{c.title}</Typography>
-                        <Typography variant="body2">{c.date}</Typography>
+                        <Typography
+                            sx={{
+                                minWidth: 190,
+                                textOverflow: "ellipsis",
+                                overflow: "hidden",
+                            }}
+                            noWrap
+                            variant="body1"
+                        >
+                            {c.title}
+                        </Typography>
+                        <Typography
+                            sx={{
+                                minWidth: 70,
+                                textOverflow: "ellipsis",
+                                overflow: "hidden",
+                            }}
+                            variant="body2"
+                            noWrap
+                        >
+                            {c.date}
+                        </Typography>
                     </Box>
                 );
             })}

@@ -23,11 +23,11 @@ const SignIn: React.VFC<SignInProps> = (props) => {
             email: _email,
             password: _pw,
         });
-        handleSignIn(_email, _pw);
+        handleSignIn(event, _email, _pw);
     };
 
     return (
-        <Container maxWidth="xs">
+        <Container component="main" maxWidth="xs">
             <Box
                 sx={{
                     marginTop: 2,

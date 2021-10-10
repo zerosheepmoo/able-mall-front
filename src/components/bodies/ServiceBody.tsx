@@ -22,39 +22,32 @@ const services = [
         imgsrc: "https://images.unsplash.com/photo-1605721911519-3dfeb3be25e7",
     },
     {
-        title: "[임의의 서비스]",
-        desc: `다람쥐 헌 쳇바퀴에 타고파. 나는 차륜을 타고 불타의 광명을 보고파.`,
-        imgsrc: "https://images.unsplash.com/photo-1536706936563-c9e47fc563df",
+        title: "가족상담",
+        desc: `가족이 평화로워야 모든 일이 잘풀린다. 가화만사성이라. 가정을 잘 돌보아야 나라를 다스리고 천하를 평정할 수 있다.
+        수신제가치국평찬하라.`,
+        imgsrc: "https://images.unsplash.com/photo-1609220136736-443140cffec6",
     },
     {
-        title: "[임의의 서비스2]",
-        desc: `다람쥐 헌 쳇바퀴에 타고파. 나는 차륜을 타고 불타의 광명을 보고파.`,
-        imgsrc: "https://images.unsplash.com/photo-1536706936563-c9e47fc563df",
+        title: "자조행동 프로그램",
+        desc: `이 프로그램은 청소년기 자녀들의 독립적 생활에 필요한 기술을 가르칠 수 있는 효과적인 방법을 제공하고 있습니다. 
+        우선, 교수방법의 개요를 읽으면서 내용에 쉽게 접근할 수 있고 일곱 가지 유형의 기술을 지도하는 단계별 지침과 아래의 내용을 만날 수 있을 것입니다.`,
+        imgsrc: "https://images.unsplash.com/photo-1495900593237-22dc861b231d",
     },
     {
-        title: "[임의의 서비스3]",
-        desc: `다람쥐 헌 쳇바퀴에 타고파. 나는 차륜을 타고 불타의 광명을 보고파.`,
-        imgsrc: "https://images.unsplash.com/photo-1536706936563-c9e47fc563df",
+        title: "학습지원",
+        desc: `지원받고 싶은 사람, 손?. 그래 거기 맨앞의 금발머리, 그래 너말이야.`,
+        imgsrc: "https://images.unsplash.com/photo-1532619187608-e5375cab36aa",
     },
     {
-        title: "[임의의 서비스4]",
-        desc: `다람쥐 헌 쳇바퀴에 타고파. 나는 차륜을 타고 불타의 광명을 보고파.`,
-        imgsrc: "https://images.unsplash.com/photo-1536706936563-c9e47fc563df",
+        title: "활동보조 서비스 신청",
+        desc: `인간다운 삶을 영위하기 위해서는 돈이 필요하고, 이를 가장 빨리 해결 할 수 있는 방법은
+        국가정책 중 활동보조 서비스를 신청하는 것이다.`,
+        imgsrc: "https://images.unsplash.com/photo-1526304640581-d334cdbbf45e",
     },
     {
-        title: "[임의의 서비스5]",
-        desc: `다람쥐 헌 쳇바퀴에 타고파. 나는 차륜을 타고 불타의 광명을 보고파.`,
-        imgsrc: "https://images.unsplash.com/photo-1536706936563-c9e47fc563df",
-    },
-    {
-        title: "[임의의 서비스6]",
-        desc: `다람쥐 헌 쳇바퀴에 타고파. 나는 차륜을 타고 불타의 광명을 보고파.`,
-        imgsrc: "https://images.unsplash.com/photo-1536706936563-c9e47fc563df",
-    },
-    {
-        title: "[임의의 서비스7]",
-        desc: `다람쥐 헌 쳇바퀴에 타고파. 나는 차륜을 타고 불타의 광명을 보고파.`,
-        imgsrc: "https://images.unsplash.com/photo-1536706936563-c9e47fc563df",
+        title: "기타 복지서비스 조회",
+        desc: `그 외 수영, 주짓수, 플룻트 수업반을 운영하여 제공한다`,
+        imgsrc: "https://images.unsplash.com/photo-1514213949578-58fe7b8ff146",
     },
 ];
 

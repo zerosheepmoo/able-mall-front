@@ -76,22 +76,21 @@ const AuthBody: React.VFC<AuthBodyProps> = (props) => {
                     <Box
                         sx={{
                             display: "flex",
-                            alignItems: "flex-end",
-                            justifyContent: "left",
-                            ml: 4,
-                            mt: 4,
-                            mb: 4,
+                            alignItems: "baseline",
+                            justifyContent: "center",
+                            m: 2,
+                            mb: 8,
                         }}
                     >
                         <TextField
                             inputProps={{
-                                style: { fontSize: 42, maxWidth: 200 },
+                                style: { fontSize: 24, maxWidth: 140 },
                             }}
                             variant="standard"
                             required
-                            placeholder="성함입력..."
+                            placeholder="성함입력.."
                         />
-                        <Typography variant="h4" role="body1">
+                        <Typography variant="h5" role="body1">
                             님, 처음 오셨나요?
                         </Typography>
                     </Box>
@@ -101,6 +100,7 @@ const AuthBody: React.VFC<AuthBodyProps> = (props) => {
                         orientation={
                             winWidth >= 600 ? "horizontal" : "vertical"
                         }
+                        sx={{ alignItems: "center" }}
                     >
                         {steps.map((label, index) => (
                             <Step key={label} completed={completed[index]}>
@@ -148,11 +148,11 @@ const AuthBody: React.VFC<AuthBodyProps> = (props) => {
                                         onClick={handleBack}
                                         sx={{ mr: 1 }}
                                     >
-                                        Back
+                                        이전
                                     </Button>
                                     <Box sx={{ flex: "1 1 auto" }} />
                                     <Button onClick={handleNext} sx={{ mr: 1 }}>
-                                        Next
+                                        다음
                                     </Button>
                                     {activeStep !== steps.length &&
                                         (completed[activeStep] ? (
@@ -167,8 +167,8 @@ const AuthBody: React.VFC<AuthBodyProps> = (props) => {
                                             <Button onClick={handleComplete}>
                                                 {completedSteps() ===
                                                 totalSteps() - 1
-                                                    ? "Finish"
-                                                    : "Complete Step"}
+                                                    ? "완료"
+                                                    : "제출"}
                                             </Button>
                                         ))}
                                 </Box>

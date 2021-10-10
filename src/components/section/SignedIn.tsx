@@ -7,7 +7,9 @@ import { SignedInProps } from "../../interfaces/props";
 import Typography from "@mui/material/Typography";
 
 const SignedIn: React.VFC<SignedInProps> = (props) => {
-    const { signout, nickname, email, points } = props;
+    const { signout, info } = props;
+
+    const { name, email, type, level, points } = info;
 
     return (
         <Container
@@ -27,7 +29,7 @@ const SignedIn: React.VFC<SignedInProps> = (props) => {
                     }}
                 >
                     <Typography variant="h4" role="body1">
-                        {nickname} 님
+                        {name} 님
                     </Typography>
                     <Typography variant="h6" role="body1">
                         {email}
@@ -44,8 +46,28 @@ const SignedIn: React.VFC<SignedInProps> = (props) => {
                     <Typography>잔고: </Typography>
                     <Typography>{points}pt</Typography>
                 </Box>
-                <Typography sx={{ pt: 2, pb: 2 }}>장애종류: </Typography>
-                <Typography sx={{ pt: 2, pb: 2 }}>장애등급: </Typography>
+                <Box
+                    sx={{
+                        pt: 2,
+                        pb: 2,
+                        display: "flex",
+                        justifyContent: "space-between",
+                    }}
+                >
+                    <Typography>장애종류: </Typography>
+                    <Typography>{type}</Typography>
+                </Box>
+                <Box
+                    sx={{
+                        pt: 2,
+                        pb: 2,
+                        display: "flex",
+                        justifyContent: "space-between",
+                    }}
+                >
+                    <Typography>장애등급: </Typography>
+                    <Typography>{level}</Typography>
+                </Box>
             </Paper>
             <Button
                 type="submit"

@@ -1,4 +1,5 @@
 import React from "react";
+import { ProductType } from "./consts";
 
 // navigations
 
@@ -10,17 +11,23 @@ export interface BottomNavProps {
 export interface NavProps {
     value: number;
     handleChange: (event: React.SyntheticEvent, newValue: number) => void;
+    signedIn: boolean;
+    winWidth: number;
 }
 
 export interface MobAppBarProps {
+    signedIn: boolean;
     value: number;
     handleChange: (event: React.SyntheticEvent, newValue: number) => void;
+    goSignIn: () => void;
 }
 
 export interface ComplexNavProps {
     value: number;
     handleChange: (event: React.SyntheticEvent, newValue: number) => void;
     winWidth: number;
+    signedIn: boolean;
+    goSignIn: () => void;
 }
 
 // Layouts
@@ -49,7 +56,7 @@ export interface BannerLayoutProps {
 // section
 
 export interface SignInProps {
-    handleSignIn: (id?: string, pw?: string) => void;
+    handleSignIn: (e: React.SyntheticEvent, id?: string, pw?: string) => void;
     email: {
         value: string;
         dispatch: React.Dispatch<React.SetStateAction<string>>;
@@ -61,11 +68,17 @@ export interface SignInProps {
     goSignUp: () => void;
 }
 
-export interface SignedInProps {
-    signout: () => void;
-    nickname: string;
+export interface HumanInfo {
+    name: string;
     email: string;
     points: number;
+    type: string;
+    level: string;
+}
+
+export interface SignedInProps {
+    signout: () => void;
+    info: HumanInfo;
 }
 
 export interface ServiceCardProps {
@@ -75,12 +88,40 @@ export interface ServiceCardProps {
     alt?: string;
 }
 
+export interface ProductCardProps {
+    item: ProductItem;
+}
+
+export interface ProductItem {
+    title: string;
+    category: ProductType;
+    price: number;
+    img?: string;
+    alt?: string;
+    rating?: number;
+    exPrice?: number;
+}
+
+export interface ProductToolProps {
+    info: HumanInfo;
+}
+
 // body
 
 export interface AuthBodyProps {
     winWidth: number;
 }
 
-export interface MainBodyProps {
+// export interface MainBodyProps {}
+
+export interface SignInBodyProps {
     goSignUp: () => void;
+    isSignedIn: boolean;
+    setIsSignedIn: React.Dispatch<React.SetStateAction<boolean>>;
+    gohome: (event: React.SyntheticEvent) => void;
+    info: HumanInfo;
+}
+
+export interface ProductBodyProps {
+    info: HumanInfo;
 }
