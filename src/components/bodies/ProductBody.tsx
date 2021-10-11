@@ -141,7 +141,11 @@ const ProductBody: React.VFC<ProductBodyProps> = (props) => {
                     >
                         {tabsKind.map((tn) => (
                             <Tab
-                                sx={{ flex: 1, minWidth: 152 }}
+                                sx={{
+                                    flex: 1,
+                                    minWidth: 135,
+                                    fontSize: "1.5rem",
+                                }}
                                 key={tn}
                                 label={tn}
                             />
