@@ -1,4 +1,4 @@
-import React, { useState, useRef } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
 import Paper from "@mui/material/Paper";
@@ -9,6 +9,7 @@ import { ProductToolProps } from "../../interfaces/props";
 
 const ProductTool: React.VFC<ProductToolProps> = (props) => {
     const [isHidden, setHidden] = useState(false);
+    const [calcedWidth, setCalcedWidth] = useState(0);
     const ref = useRef<HTMLDivElement>(null);
 
     const { info, winWidth } = props;
@@ -19,6 +20,10 @@ const ProductTool: React.VFC<ProductToolProps> = (props) => {
     const show = () => {
         setHidden(false);
     };
+
+    useEffect(() => {
+        setCalcedWidth(ref.current?.clientWidth ?? 0);
+    }, []);
 
     return (
         <Paper
@@ -39,7 +44,7 @@ const ProductTool: React.VFC<ProductToolProps> = (props) => {
                 left:
                     winWidth < 600
                         ? `calc(50% - (${
-                              ref.current?.clientWidth ?? 360
+                              ref.current?.clientWidth ?? calcedWidth
                           }px / 2))`
                         : 10,
             }}
