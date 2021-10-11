@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, Suspense } from "react";
 import Box from "@mui/material/Box";
 import Grid from "@mui/material/Grid";
 import Tabs from "@mui/material/Tabs";
@@ -19,8 +19,9 @@ import Que from "../../images/questionmart.png";
 import Safe from "../../images/safe.png";
 import Making from "../../images/making.png";
 import Tape from "../../images/sujungtape.png";
-import ProductTool from "../section/ProductTool";
 import { ProductBodyProps } from "../../interfaces/props";
+
+const ProductTool = React.lazy(() => import("../section/ProductTool"));
 
 const itemData = [
     {
@@ -165,7 +166,9 @@ const ProductBody: React.VFC<ProductBodyProps> = (props) => {
                     );
                 })}
             </Grid>
-            <ProductTool winWidth={winWidth} info={info} />
+            <Suspense fallback={<div>포인트정보 불러오는 중..</div>}>
+                <ProductTool winWidth={winWidth} info={info} />
+            </Suspense>
         </>
     );
 };
