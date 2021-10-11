@@ -72,7 +72,7 @@ const MainPage: React.VFC = () => {
                         <ServiceBody />
                     </Route>
                     <Route path="/shop">
-                        <ProductBody info={exampleInfo} />
+                        <ProductBody info={exampleInfo} winWidth={winWidth} />
                     </Route>
                     <Route path="/polsrh">
                         <PolicySearchBody />

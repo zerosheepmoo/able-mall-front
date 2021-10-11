@@ -110,7 +110,7 @@ const tabsKind = [
 ];
 
 const ProductBody: React.VFC<ProductBodyProps> = (props) => {
-    const { info } = props;
+    const { info, winWidth } = props;
     const [categoryType, setCategoryType] = useState(0);
 
     const handleCategory = (event: React.SyntheticEvent, newValue: number) => {
@@ -165,7 +165,7 @@ const ProductBody: React.VFC<ProductBodyProps> = (props) => {
                     );
                 })}
             </Grid>
-            <ProductTool info={info} />
+            <ProductTool winWidth={winWidth} info={info} />
         </>
     );
 };

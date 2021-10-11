@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
 import Paper from "@mui/material/Paper";
@@ -9,8 +9,9 @@ import { ProductToolProps } from "../../interfaces/props";
 
 const ProductTool: React.VFC<ProductToolProps> = (props) => {
     const [isHidden, setHidden] = useState(false);
+    const ref = useRef<HTMLDivElement>(null);
 
-    const { info } = props;
+    const { info, winWidth } = props;
 
     const hide = () => {
         setHidden(true);
@@ -23,20 +24,26 @@ const ProductTool: React.VFC<ProductToolProps> = (props) => {
         <Box
             sx={{
                 position: "sticky",
-                left: 10,
-                bottom: 10,
+                bottom: 0,
+            }}
+            style={{
+                left:
+                    winWidth < 600
+                        ? `calc(50% - (${ref.current?.clientWidth}px / 2))`
+                        : 10,
             }}
         >
             <Paper
                 elevation={6}
                 color="primary"
                 sx={{
-                    height: isHidden ? 120 : 290,
-                    width: "94vw",
-                    maxWidth: 400,
+                    height: isHidden ? 120 : 280,
+                    width: "92vw",
                     textAlign: "center",
                     backgroundColor: "#ededed",
+                    maxWidth: 400,
                 }}
+                ref={ref}
             >
                 <IconButton
                     onClick={() => {

@@ -104,6 +104,7 @@ export interface ProductItem {
 
 export interface ProductToolProps {
     info: HumanInfo;
+    winWidth: number;
 }
 
 // body
@@ -124,4 +125,5 @@ export interface SignInBodyProps {
 
 export interface ProductBodyProps {
     info: HumanInfo;
+    winWidth: number;
 }
